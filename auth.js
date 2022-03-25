@@ -41,6 +41,11 @@
     .use(cors())
     .use(cookieParser());
  
+ app.get('/', function(req, res) {
+   // your application requests authorization
+   res.redirect('http://localhost:8888/login');
+ });
+
  app.get('/login', function(req, res) {
  
    var state = generateRandomString(16);
